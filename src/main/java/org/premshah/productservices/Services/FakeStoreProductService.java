@@ -1,6 +1,7 @@
 package org.premshah.productservices.Services;
 
 import org.premshah.productservices.DTOs.FakeStoreProductDTO;
+import org.premshah.productservices.Exceptions.ProductNotFoundException;
 import org.premshah.productservices.Models.Category;
 import org.premshah.productservices.Models.Product;
 import org.springframework.core.ParameterizedTypeReference;
@@ -63,7 +64,7 @@ public class FakeStoreProductService implements ProductServices{
         );
 
         if(fakeStoreProductDTO == null) {
-            return new Product();
+            throw new ProductNotFoundException(id, "Invalid Product ID : " + id + ".  No such product found.");
         }
 
         Product product = new Product();

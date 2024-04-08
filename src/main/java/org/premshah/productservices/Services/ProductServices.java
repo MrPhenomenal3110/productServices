@@ -2,8 +2,6 @@ package org.premshah.productservices.Services;
 
 import org.premshah.productservices.Models.Category;
 import org.premshah.productservices.Models.Product;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 public interface ProductServices {
