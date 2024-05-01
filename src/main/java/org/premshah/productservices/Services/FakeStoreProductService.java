@@ -1,6 +1,7 @@
 package org.premshah.productservices.Services;
 
 import org.premshah.productservices.DTOs.FakeStoreProductDTO;
+import org.premshah.productservices.Exceptions.CategoryNotFoundException;
 import org.premshah.productservices.Exceptions.ProductNotFoundException;
 import org.premshah.productservices.Models.Category;
 import org.premshah.productservices.Models.Product;
@@ -128,7 +129,7 @@ public class FakeStoreProductService implements ProductServices{
         List<Product> products = new ArrayList<>();
 
         if(fakeStoreProductDTOS == null) {
-            return new ArrayList<>();
+            throw new CategoryNotFoundException(category, "Invalid Category : '" + category + "'.  No such category found.");
         }
 
 
